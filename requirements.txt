@@ -1,7 +1,7 @@
 streamlit
-langchain
+langchain ==0.1.14
 langchain-community
-sentence-transformers
+sentence-transformers ==2.2.2
 transformers
 faiss-cpu
 huggingface-hub
