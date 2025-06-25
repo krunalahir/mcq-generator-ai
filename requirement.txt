@@ -6,3 +6,6 @@ faiss-cpu
 huggingface-hub
 keybert
 pypdf
+scikit-learn
+pandas
+numpy
