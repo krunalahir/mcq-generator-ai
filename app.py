@@ -21,7 +21,15 @@ def load_embedder():
     return SentenceTransformer("all-MiniLM-L6-v2", device=device)
 
 embedder = load_embedder()
-embedding_model = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+@st.cache_resource
+def load_langchain_embedder():
+    return SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+
+embedding_model = load_langchain_embedder()@st.cache_resource
+def load_langchain_embedder():
+    return SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+
+embedding_model = load_langchain_embedder()
 kw_model = KeyBERT("all-MiniLM-L6-v2")
 
 model_name = "google/flan-t5-base"
