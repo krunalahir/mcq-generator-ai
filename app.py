@@ -13,7 +13,7 @@ import pandas as pd
 import tempfile
 import random
 import torch
-from langchain.embeddings import SentenceTransformerEmbedding
+from langchain.embeddings import SentenceTransformerEmbeddings
 
 @st.cache_resource(show_spinner="Loading model...")
 def load_embedder():
