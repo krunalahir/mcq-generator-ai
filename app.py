@@ -12,9 +12,15 @@ from keybert import KeyBERT
 import pandas as pd
 import tempfile
 import random
+import torch
+from langchain.embeddings import SentenceTransformerEmbedding
 
+@st.cache_resource(show_spinner="Loading model...")
+def load_embedder():
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    return SentenceTransformer("all-MiniLM-L6-v2", device=device)
 
-embedder = SentenceTransformer("all-MiniLM-L6-v2")
+embedder = load_embedder()
 embedding_model = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
 kw_model = KeyBERT("all-MiniLM-L6-v2")
 
