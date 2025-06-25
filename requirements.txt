@@ -10,3 +10,4 @@ pypdf
 scikit-learn
 pandas
 numpy
+torch
