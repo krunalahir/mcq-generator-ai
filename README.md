@@ -38,7 +38,7 @@ This is an end-to-end **MCQ generation app** built with  GenAI ,RAG based app  .
 4. Each chunk is embedded using **SentenceTransformer**
 5. The best context chunk is retrieved using **FAISS + MMR**
 6. **LangChain + FLAN-T5** generates a question based on context + answer
-     ## Here question generator llm ,retriever , prompt,embedding generation ,text splitter,vector store are all combined just to generate the question , so forming chain and combined called RAG ##
+      **Here question generator llm ,retriever , prompt,embedding generation ,text splitter,vector store are all combined just to generate the question , so forming chain and combined called RAG**
 7. **KeyBERT** extracts key phrases from context, filters using cosine similarity, and selects 3 distractors
 8. **MCQ** is displayed and exported
 
@@ -59,7 +59,7 @@ This is an end-to-end **MCQ generation app** built with  GenAI ,RAG based app  .
 ## 🖥️ Installation
 
 
-git clone https://github.com/"your username "/mcq-generator-ai.git
-cd mcq-generator-ai
-pip install -r requirements.txt
-streamlit run app.py
+git clone https://github.com/"your username "/mcq-generator-ai.git  |
+cd mcq-generator-ai  |
+pip install -r requirements.txt  |
+streamlit run app.py  |
