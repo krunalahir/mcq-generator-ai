@@ -14,7 +14,7 @@ This is an end-to-end **MCQ generation app** built with  GenAI ,RAG based app  .
 
 **Try the app**: []
 
-**GitHub Repo**: [https://github.com/krunal05/mcq-generator-ai]
+**GitHub Repo**: [https://github.com/krunalahir/mcq-generator-ai]
 
 
 
