@@ -1,10 +1,8 @@
-torch
-sentence-transformers
-huggingface_hub
-transformers
 streamlit
 langchain
-langchain-community
-keybert
+sentence-transformers
+transformers
 faiss-cpu
+huggingface-hub
+keybert
 pypdf
