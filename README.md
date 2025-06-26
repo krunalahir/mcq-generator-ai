@@ -12,7 +12,7 @@ This is an end-to-end **MCQ generation app** built with  GenAI ,RAG based app  .
 
 ## 🚀 Live Demo
 
-**Try the app**: [https://mcq-generator-ai-ageekgbns7slijwqvmxmhd.streamlit.app]
+**Try the app**: [https://mcq-generator-ai-4bsvjtzjvhx67twrrphrog.streamlit.app]
 
 **GitHub Repo**: [https://github.com/krunalahir/mcq-generator-ai]
 
