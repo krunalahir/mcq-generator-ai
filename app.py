@@ -58,11 +58,11 @@ if uploaded_file and answers_input and generate_btn:
 
     loader = PyPDFLoader(pdf_path)
     documents = loader.load()
-    splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
+    splitter = RecursiveCharacterTextSplitter(chunk_size=800, chunk_overlap=100)
     chunks = splitter.split_documents(documents)
 
     vectorstore = FAISS.from_documents(chunks, embedding_model)
-    retriever = vectorstore.as_retriever(search_type="mmr", search_kwargs={"k": 4})
+    retriever = vectorstore.as_retriever(search_type="mmr", search_kwargs={"k": 4}, "fetch_k":10,"lamda_mult":0.5)
 
     answers = [a.strip() for a in answers_input.split(",") if a.strip()]
     all_mcqs = []
@@ -90,19 +90,18 @@ if uploaded_file and answers_input and generate_btn:
         candidates = sorted(candidates, key=lambda x: -x[1])
         distractors = [phrase for phrase, _ in candidates[:3]]
 
-     ##    for i in range(len(answers)):
+     ##    for i in range(len(answers)): create creation errorr somrtme
     
-    # Ensure distractors has at least 3 options
         if len(distractors) < 3:
             st.warning(f"Only {len(distractors)} distractors generated. Filling with placeholders.")
             while len(distractors) < 3:
                  distractors.append("Placeholder")
 
-    # Combine answer with top 3 distractors
+   
         options = [answer] + distractors[:3]
         random.shuffle(options)
 
-    # Store result safely
+  
         result = {
             "answer": answer,
             "question": question,
