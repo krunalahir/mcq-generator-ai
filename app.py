@@ -90,30 +90,30 @@ if uploaded_file and answers_input and generate_btn:
         candidates = sorted(candidates, key=lambda x: -x[1])
         distractors = [phrase for phrase, _ in candidates[:3]]
 
-        for i in range(len(answers)):
+     ##    for i in range(len(answers)):
     
     # Ensure distractors has at least 3 options
-            if len(distractors) < 3:
-                st.warning(f"Only {len(distractors)} distractors generated. Filling with placeholders.")
-                while len(distractors) < 3:
-                    distractors.append("Placeholder")
+        if len(distractors) < 3:
+            st.warning(f"Only {len(distractors)} distractors generated. Filling with placeholders.")
+            while len(distractors) < 3:
+                 distractors.append("Placeholder")
 
     # Combine answer with top 3 distractors
-            options = [answer] + distractors[:3]
-            random.shuffle(options)
+        options = [answer] + distractors[:3]
+        random.shuffle(options)
 
     # Store result safely
-            result = {
-                "answer": answer,
-                "question": question,
-                "option_1": options[0],
-                "option_2": options[1],
-                "option_3": options[2],
-                "option_4": options[3],
-                "correct_option": f"option_{options.index(answer) + 1}"
-            }
+        result = {
+            "answer": answer,
+            "question": question,
+            "option_1": options[0],
+            "option_2": options[1],
+            "option_3": options[2],
+            "option_4": options[3],
+            "correct_option": f"option_{options.index(answer) + 1}"
+        }
 
-            all_mcqs.append(result)
+        all_mcqs.append(result)
 
 
     st.subheader("✅ Generated MCQs")
