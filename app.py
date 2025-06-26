@@ -62,7 +62,7 @@ if uploaded_file and answers_input and generate_btn:
     chunks = splitter.split_documents(documents)
 
     vectorstore = FAISS.from_documents(chunks, embedding_model)
-    retriever = vectorstore.as_retriever(search_type="mmr", search_kwargs={"k": 4}, "lamda_mult":0.6)
+    retriever = vectorstore.as_retriever(search_type="mmr", search_kwargs={"k": 4,"fetch_k":10,"lambda_mult":0.6}
 
     answers = [a.strip() for a in answers_input.split(",") if a.strip()]
     all_mcqs = []
