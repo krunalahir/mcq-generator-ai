@@ -5,7 +5,7 @@ from fastapi import FastAPI, UploadFile, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import tempfile
 import os
-from models import generate_mcqs_from_pdf
+from mcq_models import generate_mcqs_from_pdf
 from datetime import datetime
 
 # Load environment variables from .env file
@@ -22,7 +22,11 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-app = FastAPI()
+app = FastAPI(
+    title="MCQ Generator API",
+    description="API for generating Multiple Choice Questions from PDF documents using AI",
+    version="1.0.0"
+)
 
 app.add_middleware(
     CORSMiddleware,

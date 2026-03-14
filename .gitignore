@@ -1,3 +1,6 @@
+# ===========================================
+# Python
+# ===========================================
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -23,49 +26,121 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
 # Virtual environments
 .venv/
 venv/
 env/
+ENV/
 mcqenv/
+.venv/
 
+# pip requirements
+*.egg
+
+# ===========================================
+# Environment Variables (SECURITY CRITICAL)
+# ===========================================
+.env
+.env.local
+.env.dev
+.env.production
+.env.*.local
+
+# ===========================================
 # IDEs
+# ===========================================
 .idea/
 .vscode/
 *.swp
 *.swo
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-
-# Environment variables file (important to exclude for security)
-.env
-.env.local
-.env.dev
-
-# Python local files
-*.pyc
-*.pyo
+*.swn
 *~
-*.tmp
+.project
+.pydevproject
+.settings/
 
-# Coverage reports
+# ===========================================
+# OS
+# ===========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ===========================================
+# Logs
+# ===========================================
+*.log
+logs/
+
+# ===========================================
+# Testing & Coverage
+# ===========================================
 htmlcov/
 .coverage
 .coverage.*
 .cache
+.pytest_cache/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
 
+# ===========================================
+# Temporary Files
+# ===========================================
+*.tmp
+*.temp
+*.bak
+*.swp
+*.pyc
+*.pyo
+
+# ===========================================
 # Jupyter Notebook
+# ===========================================
 .ipynb_checkpoints
 
+# ===========================================
 # mypy
+# ===========================================
 .mypy_cache/
+.dmypy.json
+dmypy.json
 
-# Temporary files
-*.tmp
-*.tempapp.py
+# ===========================================
+# Application Specific
+# ===========================================
+# Uploaded files (if stored locally)
+uploads/
+temp_uploads/
+temp_files/
+
+# Generated CSV files
+*.csv
+!requirements.txt
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# ===========================================
+# Documentation
+# ===========================================
+docs/_build/
+site/
+
+# ===========================================
+# Deployment
+# ===========================================
+*.pid
+*.pid.lock

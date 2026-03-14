@@ -5,7 +5,7 @@ import pytest
 import tempfile
 import os
 from unittest.mock import patch, mock_open
-from models import validate_question_quality, generate_mcqs_from_pdf, _get_cache_key, _get_from_cache, _set_in_cache
+from langchain_core import validate_question_quality, generate_mcqs_from_pdf, _get_cache_key, _get_from_cache, _set_in_cache
 
 
 def test_validate_question_quality_valid():
@@ -59,7 +59,7 @@ def test_validate_question_quality_contains_answer():
 def test_cache_get_set():
     """Test the caching mechanism"""
     # Clear any existing cache
-    from models import _cache
+    from langchain_core import _cache
     _cache.clear()
     
     # Test setting and getting from cache
@@ -77,7 +77,7 @@ def test_cache_get_set():
 
 def test_cache_expired():
     """Test that expired cache entries are removed"""
-    from models import _cache, _is_cache_valid
+    from langchain_core import _cache, _is_cache_valid
     from datetime import datetime, timedelta
     
     # Clear any existing cache
