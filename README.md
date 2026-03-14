@@ -49,7 +49,7 @@ This application leverages **Mistral AI**, **LangChain**, **FAISS vector search*
 MCQ_generator/
 ├── api.py                  # FastAPI backend server
 ├── Frontend.py             # Modern Streamlit frontend
-├── langchain_core.py       # Core MCQ generation logic
+├── mcq_models.py       # Core MCQ generation logic
 ├── test_models.py          # Unit tests
 ├── requirements.txt        # Python dependencies
 ├── runtime.txt            # Python runtime version (3.11.9)
@@ -154,7 +154,7 @@ streamlit run app.py
 ```
 ┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
 │   Streamlit UI  │────▶│  FastAPI Backend │────▶│  MCQ Generator  │
-│  (Frontend.py)  │     │     (api.py)     │     │ (langchain_core)│
+│  (Frontend.py)  │     │     (api.py)     │     │ (mcq_models)│
 └─────────────────┘     └──────────────────┘     └─────────────────┘
                                                         │
                                                         ▼
